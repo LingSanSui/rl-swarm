@@ -97,7 +97,7 @@ npm run dev > /dev/null 2>&1 &
     cleanup() {
         echo "Shutting down server..."
         kill $SERVER_PID
-        rm -r modal-login/temp-data/*.json
+        #rm -r modal-login/temp-data/*.json
         exit 0
     }
 
