@@ -243,7 +243,7 @@ class HivemindGRPOTrainer:
         self.logger.info("Training timed out!")
 
     def follower_train(
-        self, check_interval=5.0, log_timeout=10.0, max_check_interval=60.0 * 5
+        self, check_interval=5.0, log_timeout=10.0, max_check_interval=30.0
     ):
         done_rounds = set()
         start_time = time.monotonic()
