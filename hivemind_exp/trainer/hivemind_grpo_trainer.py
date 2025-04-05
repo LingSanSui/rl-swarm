@@ -285,7 +285,7 @@ class HivemindGRPOTrainer:
                 check_backoff = check_interval  # Reset backoff after successful round
             else:
                 self.logger.info(
-                    f"Already finished round: {round_num}. Next check in {check_backoff}s."
+                    f":{self.node.key}:Already finished round: {round_num}. Next check in {check_backoff}s."
                 )
                 time.sleep(check_backoff)
                 check_backoff = min(check_backoff * 2, max_check_interval)
