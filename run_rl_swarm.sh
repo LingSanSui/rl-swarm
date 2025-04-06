@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#rm -rf /root/.cache
 #General args
 ROOT=$PWD
 
