@@ -84,18 +84,6 @@ class HivemindGRPOTrainer:
                 f" ✅✅✅✅✅✅------✅✅✅✅✅>> 当前rewards值为 {self.stage_rewards}"
             )
             self.logger.info(
-                f" ✅✅✅✅✅✅------✅✅✅✅✅>> 当前rewards值为 {self.stage_rewards}"
-            )
-            self.logger.info(
-                f" ✅✅✅✅✅✅------✅✅✅✅✅>> 当前rewards值为 {self.stage_rewards}"
-            )
-            self.logger.info(
-                f" rewards------rewards>> rewards!!!: {self.stage_rewards}"
-            )
-            self.logger.info(
-                f" rewards------rewards>> rewards!!!: {self.stage_rewards}"
-            )
-            self.logger.info(
                 f" rewards------rewards>> rewards!!!: {self.stage_rewards}"
             )
             self.dht.store(
