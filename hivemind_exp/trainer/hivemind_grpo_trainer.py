@@ -80,6 +80,15 @@ class HivemindGRPOTrainer:
 
             # Just the latest.
             self.stage_rewards += sum(self.node.rewards)
+            self.logger.info(
+                f" ✅✅✅✅✅✅------✅✅✅✅✅>> 当前rewards值为 {self.stage_rewards}"
+            )
+            self.logger.info(
+                f" ✅✅✅✅✅✅------✅✅✅✅✅>> 当前rewards值为 {self.stage_rewards}"
+            )
+            self.logger.info(
+                f" ✅✅✅✅✅✅------✅✅✅✅✅>> 当前rewards值为 {self.stage_rewards}"
+            )
             self.dht.store(
                 key=rewards_key(self.node.round_num, self.node.stage_num),
                 subkey=self.node.key,
@@ -284,9 +293,13 @@ class HivemindGRPOTrainer:
                 done_rounds.add(round_num)
                 check_backoff = check_interval  # Reset backoff after successful round
             else:
-                self.logger.info(
-                    f":{self.node.key}:Already finished round: {round_num}. Next check in {check_backoff}s."
-                )
+                if check_backoff != 30:
+                    self.logger.info(
+                        f":{self.node.key}:已完成训练轮次: {round_num}. 下次检查在 {check_backoff}秒后，已省略等待的提示，耐心等待启动."
+                    )
+                    self.logger.info(
+                        f":{self.node.key}:Already finished round: {round_num}. Next check in {check_backoff}s."
+                    )
                 time.sleep(check_backoff)
                 check_backoff = min(check_backoff * 2, max_check_interval)
 
