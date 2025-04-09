@@ -39,7 +39,7 @@ class HivemindGRPOTrainer:
             self.node = node
             self.dht = dht
             self.logger = logger
-            self.stage_rewards = 4.0
+            self.stage_rewards = 0.0
             super().__init__(processing_class=tokenizer, **kwargs)
 
         def publish_leaderboard(self):
@@ -80,11 +80,11 @@ class HivemindGRPOTrainer:
 
             # Just the latest.
             self.stage_rewards += sum(self.node.rewards)
+            #self.logger.info(
+            #    f" ✅✅✅✅✅✅------✅✅✅✅✅>> 当前rewards值为 {self.stage_rewards}"
+            #)
             self.logger.info(
-                f" ✅✅✅✅✅✅------✅✅✅✅✅>> 当前rewards值为 {self.stage_rewards}"
-            )
-            self.logger.info(
-                f" rewards------rewards>> rewards!!!: {self.stage_rewards}"
+                f" rewards------>> : {self.stage_rewards}"
             )
             self.dht.store(
                 key=rewards_key(self.node.round_num, self.node.stage_num),
